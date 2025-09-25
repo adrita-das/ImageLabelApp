@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    //id("org.jetbrains.kotlin.kapt")
+    //alias(libs.plugins.kotlin.kapt)
+    id("kotlin-kapt")
 }
+
 
 android {
     namespace = "com.example.imagelabelapp"
@@ -36,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -47,4 +50,12 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("com.google.mlkit:image-labeling:17.0.9")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+
+    // Room
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:2.6.1")
+
 }

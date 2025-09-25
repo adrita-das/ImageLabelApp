@@ -20,16 +20,35 @@
         android:src="@drawable/baseline_image_24"/>
 
     <Button
+        android:id="@+id/captureImgBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/captureImgBtn"
         android:text="Capture Image"
         android:fontFamily="@font/poppins"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
-        android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:textSize="18sp"
+        android:drawableLeft="@drawable/baseline_camera_alt_24"
+        android:drawablePadding="10dp"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:textColor="@color/white"/>
 
+
+    <Button
+        android:id="@+id/galleryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose from Gallery"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/blue"
+        android:textSize="18sp"
+        android:drawableLeft="@drawable/baseline_photo_library_24"
+        android:drawablePadding="10dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/labelText"
