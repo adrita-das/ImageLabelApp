@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/objectImage"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         android:layout_marginTop="16dp"
         android:contentDescription="Captured Image"
         android:scaleType="centerCrop"
@@ -55,10 +55,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/poppins"
         android:textColor="@color/blue"
-        android:textSize="50sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
+    
+    <EditText
+        android:id="@+id/feedbackText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correct Label"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/feedbackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Submit Feedback"
+        android:textSize="18sp"
+        android:backgroundTint="@color/blue"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
+
 
 </LinearLayout>
