@@ -58,9 +58,9 @@
         android:layout_marginTop="50dp"
         android:fontFamily="@font/poppins"
         android:textColor="@color/blue"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
-    
+
     <EditText
         android:id="@+id/feedbackText"
         android:layout_width="match_parent"
@@ -79,6 +79,17 @@
         android:backgroundTint="@color/blue"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"/>
-
-
+    <Button
+        android:id="@+id/viewHistoryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="View Feedback History"
+        android:textSize="16sp"
+        android:backgroundTint="@color/gray"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/baseline_feedback_24"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        />
 </LinearLayout>
