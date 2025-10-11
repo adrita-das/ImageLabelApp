@@ -66,6 +66,8 @@ dependencies {
     implementation("com.google.mlkit:image-labeling:17.0.9")
     implementation("androidx.activity:activity-ktx:1.9.0")
 
+
+
     // Room
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:2.6.1")
@@ -77,4 +79,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
+    implementation ("com.github.bumptech.glide:glide:4.16.0") // Use the latest stable version
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0") // Use the latest stable version
 }
+

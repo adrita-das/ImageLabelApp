@@ -155,6 +155,8 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToFeedbackActivity() {
         // We use FeedbackActivity since the XML was named feedback_activity.xml
         val intent = Intent(this, FeedbackActivity::class.java)
+
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         startActivity(intent)
     }
 
