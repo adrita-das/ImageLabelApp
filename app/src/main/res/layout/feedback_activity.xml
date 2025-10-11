@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/feedback_display"
-        android:layout_width="match_parent"
+        android:id="@+id/dashboardTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:text="Loading feedback..."
-        android:textColor="@android:color/black" />
+        android:padding="16dp"
+        android:text="📊 FEEDBACK DASHBOARD"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feedbackRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/dashboardTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/emptyStateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📝 No feedback entries found."
+        android:visibility="gone"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/feedbackRecyclerView"
+        app:layout_constraintBottom_toBottomOf="@id/feedbackRecyclerView"
+        app:layout_constraintStart_toStartOf="@id/feedbackRecyclerView"
+        app:layout_constraintEnd_toEndOf="@id/feedbackRecyclerView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

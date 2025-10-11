@@ -31,7 +31,10 @@
             </intent-filter>
         </activity>
 
-
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="Feedback History">
+        </activity>
 
 
     </application>

@@ -36,9 +36,8 @@ import java.util.UUID
 import kotlin.jvm.java
 class MainActivity : AppCompatActivity() {
 
-    // SharedPreferences key for the list of feedback entries
-    private val PREFS_NAME = "ImageLabelAppPrefs"
-    private val KEY_FEEDBACK_LIST = "feedbackList"
+    private val PREFS_NAME = "IMAGELABEL_FEEDBACK_PREFS"
+    private val KEY_FEEDBACK_LIST = "FEEDBACK_LIST_DATA"
 
     // UI Components
     private lateinit var objectImage: ImageView
@@ -142,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Feedback Saved!")
             .setMessage("Thanks for your feedback! It has been successfully saved.")
-            .setPositiveButton("View History") { dialog, _ ->
+            .setPositiveButton("View Feedback") { dialog, _ ->
                 navigateToFeedbackActivity()
                 dialog.dismiss()
             }
@@ -155,7 +154,7 @@ class MainActivity : AppCompatActivity() {
     // --- NEW: Function to navigate to the history screen ---
     private fun navigateToFeedbackActivity() {
         // We use FeedbackActivity since the XML was named feedback_activity.xml
-        val intent = Intent(this, FeedbackEntry::class.java)
+        val intent = Intent(this, FeedbackActivity::class.java)
         startActivity(intent)
     }
 
@@ -212,7 +211,7 @@ class MainActivity : AppCompatActivity() {
             val imageUriString = imageUri.toString()
 
             // Create a new Feedback Entry object
-            val newEntry = FeedbackEntry(
+            val newEntry = Entry(
                 imageFilePath = imageUriString, // Storing the Uri string
                 correctLabel = correctLabel,
                 timestamp = System.currentTimeMillis()
@@ -223,8 +222,8 @@ class MainActivity : AppCompatActivity() {
             val gson = Gson()
             val existingJson = prefs.getString(KEY_FEEDBACK_LIST, null)
 
-            val feedbackListType = object : TypeToken<MutableList<FeedbackEntry>>() {}.type
-            val existingList: MutableList<FeedbackEntry> =
+            val feedbackListType = object : TypeToken<MutableList<Entry>>() {}.type
+            val existingList: MutableList<Entry> =
                 if (existingJson != null) {
                     gson.fromJson(existingJson, feedbackListType)
                 } else {
@@ -254,3 +253,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
